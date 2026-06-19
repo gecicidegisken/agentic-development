@@ -1,11 +1,17 @@
 
 def divide(a, b):
-    return a / b
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return None
 
 
 def average(numbers):
-    total = sum(numbers)
-    return total / len(numbers)
+    try:
+        total = sum(numbers)
+        return total / len(numbers)
+    except ZeroDivisionError:
+        return None
 
 
 def main():
