@@ -6,6 +6,23 @@ def divide(a, b):
         return None
 
 
+def multiply(a, b):
+    # Only allow numeric multiplication; guard against cases like 'a' * 3 -> 'aaa'
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        return None
+    try:
+        return a * b
+    except TypeError:
+        return None
+
+
+def subtract(a, b):
+    try:
+        return a - b
+    except TypeError:
+        return None
+
+
 def average(numbers):
     try:
         total = sum(numbers)
