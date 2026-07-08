@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pink Calculator</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="keys">
+      <button class="btn" data-action="clear">C</button>
+      <button class="btn" data-action="op">/</button>
+      <button class="btn" data-action="op">*</button>
+      <button class="btn" data-action="op">-</button>
+
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn" data-action="op">+</button>
+
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn" data-action="equals">=</button>
+
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">0</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const display = document.getElementById('display');
+      let current = '';
+
+      function updateDisplay(val){
+        display.textContent = val === '' ? '0' : val;
+      }
+
+      function input(value){
+        current += value;
+        updateDisplay(current);
+      }
+
+      function clearAll(){
+        current = '';
+        updateDisplay(current);
+      }
+
+      function calculate(){
+        try {
+          // Evaluate is minimal but acceptable for this small demo
+          const result = Function('return ' + current)();
+          current = String(result);
+          updateDisplay(current);
+        } catch (e) {
+          updateDisplay('Error');
+          current = '';
+        }
+      }
+
+      document.querySelectorAll('.keys .btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const action = btn.getAttribute('data-action');
+          const text = btn.textContent.trim();
+
+          if (action === 'clear'){
+            clearAll();
+            return;
+          }
+
+          if (action === 'equals'){
+            calculate();
+            return;
+          }
+
+          if (action === 'op'){
+            // add spaces around operators for safer eval
+            current += ' ' + text + ' ';
+            updateDisplay(current);
+            return;
+          }
+
+          // digit
+          input(text);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
