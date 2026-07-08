@@ -1,0 +1,25 @@
+/* Pink theme calculator styles */
+:root{
+  --bg: #ffeef8;
+  --panel: #ffd6ea;
+  --accent: #ff69b4;
+  --button: #ff8fc1;
+  --text: #3f083f;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+
+.calculator{max-width:360px;margin:6vh auto;background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(63,8,63,0.12)}
+.display{height:60px;background:linear-gradient(180deg,#fff 0%, #ffeef8 100%);border-radius:8px;padding:12px;font-size:28px;text-align:right;display:flex;align-items:center;justify-content:flex-end;margin-bottom:12px;color:var(--text);overflow:hidden}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.btn{background:var(--button);border:none;padding:18px;border-radius:8px;font-size:18px;color:white;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.08)}
+.btn[data-action="op"]{background:var(--accent)}
+.btn[data-action="equals"]{background:#e91e63}
+.btn[data-action="clear"]{background:#ff4d94}
+
+@media (max-width:420px){
+  .calculator{margin:4vh 12px}
+  .display{font-size:22px}
+  .btn{padding:14px}
+}
