@@ -3,7 +3,7 @@
 Usage
 -----
 
-This workspace includes a minimal Flask-based pink-themed calculator web app.
+This workspace includes a minimal Flask-based blue-themed calculator web app.
 
 To run the app locally:
 
