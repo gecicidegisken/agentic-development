@@ -15,6 +15,12 @@
       <button class="btn" data-action="op">*</button>
       <button class="btn" data-action="op">-</button>
 
+      <!-- Advanced operations -->
+      <button class="btn" data-action="op">^</button>
+      <button class="btn" data-action="op">%</button>
+      <button class="btn" data-action="op">(</button>
+      <button class="btn" data-action="op">)</button>
+
       <button class="btn">7</button>
       <button class="btn">8</button>
       <button class="btn">9</button>
@@ -29,6 +35,9 @@
       <button class="btn">2</button>
       <button class="btn">3</button>
       <button class="btn">0</button>
+
+      <!-- Square root button (inserts Math.sqrt( ) ) -->
+      <button class="btn" data-action="op">√</button>
     </div>
   </div>
 
@@ -79,8 +88,18 @@
           }
 
           if (action === 'op'){
-            // add spaces around operators for safer eval
-            current += ' ' + text + ' ';
+            // Map displayed operator text to insertion string for JS evaluation
+            // This keeps the UI symbols user-friendly while using JS-compatible expressions.
+            const opMap = {
+              '^': ' ** ',      // exponentiation: display ^ but use JS **
+              '%': ' % ',       // modulo keeps same symbol
+              '(': '(',         // open paren - no extra spaces
+              ')': ')',         // close paren - no extra spaces
+              '√': 'Math.sqrt('  // square root inserts Math.sqrt(
+            };
+
+            const insert = opMap.hasOwnProperty(text) ? opMap[text] : (' ' + text + ' ');
+            current += insert;
             updateDisplay(current);
             return;
           }
