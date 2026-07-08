@@ -31,6 +31,21 @@ def average(numbers):
         return None
 
 
+def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
+
+def subtract(a, b):
+    """Return the difference of a and b (a - b)."""
+    return a - b
+
+
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
+
+
 def main():
     values = [10, 20, 30]
 
