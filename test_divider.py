@@ -1,5 +1,6 @@
 import unittest
-from divider import divide, average, add, subtract, multiply
+from divider import divide, average, add, subtract, multiply, multiplier, substracter
+
 
 class TestDivider(unittest.TestCase):
     def test_divide_success(self):
@@ -19,7 +20,6 @@ class TestDivider(unittest.TestCase):
 
     def test_average_empty(self):
         self.assertIsNone(average([]))
-
     def test_add_success(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 1), 0)
@@ -34,6 +34,20 @@ class TestDivider(unittest.TestCase):
         self.assertEqual(multiply(2, 3), 6)
         self.assertEqual(multiply(-1, 5), -5)
         self.assertEqual(multiply(1.5, 2), 3.0)
+
+    def test_multiplier(self):
+        self.assertEqual(multiplier(3, 4), 12)
+        self.assertEqual(multiplier(-2, 5), -10)
+        self.assertEqual(multiplier(0, 100), 0)
+        self.assertAlmostEqual(multiplier(2.5, 4), 10.0)
+        self.assertEqual(multiplier(-1.5, -2), 3.0)
+
+    def test_substracter(self):
+        self.assertEqual(substracter(10, 5), 5)
+        self.assertEqual(substracter(-5, -10), 5)
+        self.assertEqual(substracter(0, 0), 0)
+        self.assertAlmostEqual(substracter(5.5, 2.2), 3.3)
+        self.assertEqual(substracter(2, 5), -3)
 
 if __name__ == '__main__':
     unittest.main()

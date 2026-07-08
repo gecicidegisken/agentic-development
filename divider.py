@@ -36,14 +36,17 @@ def add(a, b):
     return a + b
 
 
-def subtract(a, b):
-    """Return the difference of a and b (a - b)."""
-    return a - b
+# Reuse the existing multiply and subtract implementations above which
+# include some type-safety and error handling. Provide simple aliases
+# for the same operations requested by the feature branch.
+def multiplier(a, b):
+    """Alias for multiplication (keeps behavior consistent)."""
+    return multiply(a, b)
 
 
-def multiply(a, b):
-    """Return the product of a and b."""
-    return a * b
+def substracter(a, b):
+    """Alias for subtraction (keeps behavior consistent)."""
+    return subtract(a, b)
 
 
 def main():
