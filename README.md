@@ -1,96 +1,84 @@
 # agentic-development
 
-A minimal Flask-based calculator web application designed for learning and quick experimentation.
+Project
+-------
+A minimal Flask web application: a blue-themed single-page calculator for learning and quick experimentation. The app is intentionally small and demonstrates a Flask entry point, a simple UI, and unit tests for core arithmetic logic.
 
-Project overview
-----------------
-This repository contains a small web app built with Flask that serves a single-page calculator. It's intended as a lightweight example for learning Flask, simple web UIs, and basic Python unit testing.
-
-Key features
-------------
-- Single-page calculator UI (add, subtract, multiply, divide, clear)
-- Minimal Flask app (app.py)
+Features
+--------
+- Single-page calculator UI served at / with operations: add, subtract, multiply, divide, and clear
+- Minimal Flask app entry point (app.py)
 - Core arithmetic utilities in divider.py with unit tests (test_divider.py)
-- Simple HTML/CSS assets under templates/ and static/
+- Static assets and template in static/ and templates/
 
-ClickUp task
+Requirements
 ------------
-This change relates to ClickUp task id: 86ey773kb. Please reference this ID in the related pull request.
+- Python 3.7 or newer
+- Recommended: use a virtual environment (venv)
 
-Prerequisites
--------------
-- Python 3.7+ installed
-- Recommended: virtual environment (venv)
-
-Installation
-------------
+Setup
+-----
 1. Create and activate a virtual environment (recommended):
 
    python3 -m venv venv
    source venv/bin/activate  # macOS / Linux
-   venv\Scripts\activate     # Windows (PowerShell: venv\Scripts\Activate.ps1)
+   venv\Scripts\activate    # Windows (PowerShell: venv\Scripts\Activate.ps1)
 
-2. Install Flask:
+2. Install the required dependency (Flask):
 
    python3 -m pip install Flask
 
 Running the app
 ---------------
-Start the Flask app locally with:
+Start the application with:
 
-python3 app.py
+   python3 app.py
 
-Then open your browser and navigate to:
+By default the app listens on http://127.0.0.1:5000 and serves a single page at / (the calculator UI).
 
-http://127.0.0.1:5000
+Running tests
+-------------
+Run the test suite with pytest:
 
-The app serves one route ('/') that renders the calculator UI.
-
-Testing
--------
-Run the test suite using pytest:
-
-python3 -m pytest -q
+   python3 -m pytest -q
 
 or
 
-pytest
+   pytest
 
-The included tests cover functions in divider.py.
+The tests exercise functions in test_divider.py which validate the arithmetic utilities in divider.py.
 
 Project structure
 -----------------
-Top-level files and directories:
-
-- app.py         - Minimal Flask application that serves the calculator page
-- divider.py     - Core arithmetic helpers (divide, average)
-- templates/     - HTML templates (index.html)
-- static/        - Static assets (CSS, images, JS if any)
-- test_divider.py - Pytest tests for divider.py
-- README.md      - This file
-
-Development
------------
-- To run the app during development, start it with `python3 app.py`. The app runs on 127.0.0.1:5000 by default.
-- To run tests after making changes, use `pytest` or `python3 -m pytest -q`.
-- To extend the calculator: add new helper functions in divider.py (or new modules), add corresponding tests in test_divider.py, and update templates/index.html or static assets as needed.
+- app.py             - Flask application entry point that serves the calculator page
+- divider.py         - Core arithmetic helpers (e.g. divide)
+- templates/         - HTML templates (index.html)
+- static/            - CSS and other static assets (blue-themed styles)
+- test_divider.py    - Pytest tests for divider.py
+- README.md          - This file
 
 Contributing
 ------------
+Contributions are welcome. To contribute:
+
 1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/my-change`.
-3. Make changes, include or update tests.
-4. Open a pull request. Reference ClickUp task id 86ey773kb in the PR description.
+2. Create a branch for your change: git checkout -b feature/my-change
+3. Make your changes and add/update tests as appropriate.
+4. Open a pull request describing your change.
 
-Please follow conventional commits for commit messages. Example for this documentation change:
-
-    docs: improve README with comprehensive guide
+Please reference ClickUp task id: 86ey773kb in PRs related to this work and follow conventional commit messages (for example: `docs: improve README`).
 
 License
 -------
-This project is provided as-is for learning and experimentation. No specific license file is included; add a LICENSE if required for your use.
+This repository does not include a formal license file. It is provided for learning and experimentation. Add a LICENSE file if you need to set a usage license.
 
-Contact
--------
-For questions or issues, open an issue or submit a pull request on the repository.
+Author
+------
+Maintainer: project repository owner
+
+Contact: open an issue or submit a pull request on the repository
+
+Notes
+-----
+The app is a minimal, blue-themed Flask calculator that serves a single page at / with add/subtract/multiply/divide/clear operations. Default URL: http://127.0.0.1:5000
 
