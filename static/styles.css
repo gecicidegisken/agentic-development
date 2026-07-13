@@ -1,10 +1,10 @@
-/* Blue theme calculator styles */
+/* Pink theme calculator styles */
 :root{
-  --bg: #eaf6ff;       /* soft light blue background */
-  --panel: #d6eefb;    /* slightly deeper panel color */
-  --accent: #1565c0;   /* strong blue for operators/primary actions */
-  --button: #4dabf7;   /* main button color */
-  --text: #072a40;     /* dark navy text for contrast */
+  --bg: #FFEAF0;       /* soft light pink background */
+  --panel: #FFDDE6;    /* slightly deeper pink panel color */
+  --accent: #C2185B;   /* deep pink/magenta for operators/primary actions */
+  --button: #FF7FAF;   /* main button color (medium pink) */
+  --text: #3B0A14;     /* dark burgundy for contrast on light pink */
 }
 
 *{box-sizing:border-box}
