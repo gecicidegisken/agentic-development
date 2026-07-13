@@ -14,3 +14,12 @@ To run the app locally:
 
 The app serves a single page at `/` with basic operations: add, subtract, multiply, divide, and clear.
 
+Web Calculator
+--------------
+
+Run locally with: python3 app.py
+Open: http://127.0.0.1:5000/
+Supports parentheses, %, and ^ (maps to exponent). √ inserts Math.sqrt().
+Security: expressions are evaluated client-side and are not safe for
+untrusted input.
+
