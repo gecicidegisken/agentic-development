@@ -1,10 +1,10 @@
-/* Yellow theme calculator styles */
+/* Blue theme calculator styles */
 :root{
-  --bg: #FFF8E1;       /* soft light yellow background */
-  --panel: #FFF3BF;    /* slightly deeper yellow panel color */
-  --accent: #B36B00;   /* deep amber for operators/primary actions */
-  --button: #B36B00;   /* main button color (warm golden) */
-  --text: #2B1F00;     /* dark brown for contrast on light yellow */
+  --bg: #E3F2FD;       /* light blue background */
+  --panel: #BBDEFB;    /* slightly deeper blue panel color */
+  --accent: #1976D2;   /* dark blue for operators/primary actions */
+  --button: #2196F3;   /* main button color (blue) */
+  --text: #0D47A1;     /* dark blue for contrast on light blue */
 }
 
 *{box-sizing:border-box}
