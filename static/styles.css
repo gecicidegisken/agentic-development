@@ -1,47 +1,72 @@
-/* Black & white theme calculator styles */
-:root{
-  --bg: #000000;       /* black background */
-  --panel: #ffffff;    /* white panel */
-  --accent: #000000;   /* black accent for operators */
-  --button: #ffffff;   /* white button */
-  --text: #000000;     /* black text */
+/* Pink glass theme calculator styles */
+:root {
+  --bg: #ffe5e5; /* soft light pink background */
+  --panel: rgba(255,255,255,0.15); /* translucent panel */
+  --accent: #ff69b4; /* hot pink accent */
+  --button: rgba(255,255,255,0.25); /* translucent button */
+  --text: #ffffff; /* white text */
 }
 
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);}
 
-.calculator{max-width:360px;margin:6vh auto;background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
-.display{height:60px;background:linear-gradient(180deg,#fff 0%, var(--bg) 100%);border-radius:8px;padding:12px;font-size:28px;text-align:right;display:flex;align-items:center;justify-content:flex-end;margin-bottom:12px;color:var(--text);overflow:hidden}
-.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.btn{background:var(--button);border:none;padding:18px;border-radius:8px;font-size:18px;color:var(--text);cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.08)}
-.btn[data-action="op"]{background:var(--accent)}
-.btn[data-action="equals"]{background:var(--accent)}
-.btn[data-action="clear"]{background:var(--button)}
-
-@media (max-width:420px){
-  .calculator{margin:4vh 12px}
-  .display{font-size:22px}
-  .btn{padding:14px}
+.calculator{
+  max-width:360px;
+  margin:6vh auto;
+  background:var(--panel);
+  backdrop-filter:blur(12px);
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
 }
 
-:root{
-  --bg: #ffe5e5;       /* soft light red background */
-  --panel: #FFF3BF;    /* slightly deeper yellow panel color */
-  --accent: #B36B00;   /* deep amber for operators/primary actions */
-  --button: #B36B00;   /* main button color (warm golden) */
-  --text: #2B1F00;     /* dark brown for contrast on light yellow */
+.display{
+  height:60px;
+  background:linear-gradient(180deg,#fff 0%, var(--bg) 100%);
+  border-radius:8px;
+  padding:12px;
+  font-size:28px;
+  text-align:right;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  margin-bottom:12px;
+  color:var(--text);
+  overflow:hidden;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.keys{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
 
-.calculator{max-width:360px;margin:6vh auto;background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(7,42,64,0.12)}
-.display{height:60px;background:linear-gradient(180deg,#fff 0%, var(--bg) 100%);border-radius:8px;padding:12px;font-size:28px;text-align:right;display:flex;align-items:center;justify-content:flex-end;margin-bottom:12px;color:var(--text);overflow:hidden}
-.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.btn{background:var(--button);border:none;padding:18px;border-radius:8px;font-size:18px;color:white;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.08)}
-.btn[data-action="op"]{background:var(--accent)}
-.btn[data-action="equals"]{background:var(--accent)}
-.btn[data-action="clear"]{background:var(--button)}
+.btn{
+  background:var(--button);
+  border:none;
+  padding:18px;
+  border-radius:8px;
+  font-size:18px;
+  color:var(--text);
+  cursor:pointer;
+  box-shadow:0 4px 8px rgba(0,0,0,0.08);
+  transition:background 0.2s, transform 0.1s;
+}
+
+.btn:hover{
+  background:rgba(255,255,255,0.35);
+  transform:translateY(-2px);
+}
+
+.btn[data-action="op"],
+.btn[data-action="equals"]{
+  background:var(--accent);
+  color:#fff;
+}
+
+.btn[data-action="clear"]{
+  background:var(--button);
+}
 
 @media (max-width:420px){
   .calculator{margin:4vh 12px}
