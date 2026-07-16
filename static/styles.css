@@ -1,8 +1,8 @@
-/* Blue glass theme calculator styles */
+/* Pink glass theme calculator styles */
 :root {
-  --bg: #e0f7ff; /* light blue background */
+  --bg: #ffe5e5; /* soft light pink background */
   --panel: rgba(255,255,255,0.15); /* translucent panel */
-  --accent: #1e90ff; /* dodger blue accent */
+  --accent: #ff69b4; /* hot pink accent */
   --button: rgba(255,255,255,0.25); /* translucent button */
   --text: #ffffff; /* white text */
 }
